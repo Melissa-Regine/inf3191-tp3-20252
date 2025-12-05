@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ animal.nom }} – Fiche de l'animal</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>{{ animal.nom }} ({{ animal.espece }})</h1>
+
+    <p><strong>Race :</strong> {{ animal.race }}</p>
+    <p><strong>Âge :</strong> {{ animal.age }} ans</p>
+    <p><strong>Description :</strong> {{ animal.description }}</p>
+
+    <h2>Adresse</h2>
+    <p>{{ animal.adresse }}</p>
+    <p>{{ animal.ville }} ({{ animal.cp }})</p>
+
+    <h2>Contacter le propriétaire</h2>
+    <p>
+        <a href="mailto:{{ animal.courriel }}?subject=Intérêt pour {{ animal.nom }}">
+            Envoyer un courriel
+        </a>
+    </p>
+
+    <p><a href="/">Retour à l'accueil</a></p>
+</body>
+</html>

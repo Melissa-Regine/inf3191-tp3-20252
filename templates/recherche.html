@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats de recherche</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <h1>Résultats de recherche pour : "{{ query }}"</h1>
+
+    <form action="/recherche" method="get">
+        <input type="text" name="q" value="{{ query }}" required>
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <hr>
+
+    {% if resultats|length == 0 %}
+        <p>Aucun animal ne correspond à votre recherche.</p>
+    {% else %}
+        <div id="listeAnimaux">
+        {% for animal in resultats %}
+            <div class="animal-card">
+                <h3>{{ animal.nom }}</h3>
+                <p><strong>Espèce :</strong> {{ animal.espece }}</p>
+                <p><strong>Race :</strong> {{ animal.race }}</p>
+                <p>{{ animal.description }}</p>
+
+                <a href="/animal/{{ animal.id }}">Voir la fiche complète</a>
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+
+    <p><a href="/">Retour à l'accueil</a></p>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Adoption d'animaux de compagnie</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header class="header-accueil">
+        <h1>Adoption d'animaux de compagnie</h1>
+        <p class="sous-titre">Bienvenue !, découvrez nos animaux disponibles en adoption</p>
+
+        <img src="/animaux.png" alt="Animaux de compagnie" class="header-image">
+    </header>
+
+    <!-- Formulaire de recherche -->
+    <form action="/recherche" method="get" id="formRecherche">
+        <input type="text" name="q" placeholder="Rechercher un animal..." required>
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <h2>5 animaux au hasard</h2>
+
+    <!-- Liste des animaux -->
+    <div id="listeAnimaux">
+        {% for animal in animaux %}
+            <div class="animal-card">
+                <h3>{{ animal.nom }}</h3>
+                <p><strong>Espèce :</strong> {{ animal.espece }}</p>
+                <p><strong>Race :</strong> {{ animal.race }}</p>
+                <p>{{ animal.description }}</p>
+
+                <a href="/animal/{{ animal.id }}">Voir la fiche complète</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <hr>
+
+    <a href="/adoption">Mettre un animal en adoption</a>
+
+</body>
+</html>
+

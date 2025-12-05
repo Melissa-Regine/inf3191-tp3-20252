@@ -76,3 +76,13 @@ class Database:
         lastId = cursor.fetchone()[0]
         connection.commit()
         return lastId
+
+    def search_animaux(self, query):
+        cursor = self.get_connection().cursor()
+        like_query = f"%{query}%"
+        sql = ("select id, nom, espece, race, age, description, "
+            "courriel, adresse, ville, cp from animaux "
+            "where nom like ? or espece like ? or race like ?")
+        cursor.execute(sql, (like_query, like_query, like_query))
+        results = cursor.fetchall()
+        return [_build_animal(item) for item in results]

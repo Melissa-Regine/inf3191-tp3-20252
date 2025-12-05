@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mettre un animal en adoption</title>
+
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Mettre un animal en adoption</h1>
+
+        <form id="adoptionForm" method="post" class="card">
+
+            <div class="field">
+                <label>Nom :</label>
+                <input type="text" id="nom" name="nom">
+                <span class="error" id="errNom"></span>
+            </div>
+
+            <div class="field">
+                <label>Espèce :</label>
+                <input type="text" id="espece" name="espece">
+                <span class="error" id="errEspece"></span>
+            </div>
+
+            <div class="field">
+                <label>Race :</label>
+                <input type="text" id="race" name="race">
+                <span class="error" id="errRace"></span>
+            </div>
+
+            <div class="field">
+                <label>Âge :</label>
+                <input type="number" id="age" name="age">
+                <span class="error" id="errAge"></span>
+            </div>
+
+            <div class="field">
+                <label>Description :</label>
+                <textarea id="description" name="description"></textarea>
+                <span class="error" id="errDescription"></span>
+            </div>
+
+            <div class="field">
+                <label>Courriel :</label>
+                <input type="email" id="courriel" name="courriel">
+                <span class="error" id="errCourriel"></span>
+            </div>
+
+            <div class="field">
+                <label>Adresse :</label>
+                <input type="text" id="adresse" name="adresse">
+                <span class="error" id="errAdresse"></span>
+            </div>
+
+            <div class="field">
+                <label>Ville :</label>
+                <input type="text" id="ville" name="ville">
+                <span class="error" id="errVille"></span>
+            </div>
+
+            <div class="field">
+                <label>Code postal :</label>
+                <input type="text" id="cp" name="cp">
+                <span class="error" id="errCp"></span>
+            </div>
+
+            <button type="submit" class="btn">Ajouter l’animal</button>
+        </form>
+
+        <p><a href="/">Retour à l'accueil</a></p>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Header de la page d'accueil */
+.header-accueil {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px 30px;
+    align-items: start;
+}
+
+.header-image {
+    width: 210x;
+    height: 190px;
+    object-fit: contain;
+    grid-row: 1 / 3;
+    grid-column: 1;
+}
+
+.header-accueil h1 {
+    color: #667eea;
+    font-size: 2.8em;
+    font-weight: bold;
+    grid-row: 1;
+    grid-column: 2;
+    margin: 0;
+    align-self: end;
+}
+
+.sous-titre {
+    color: #555;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 0 auto;       /* centre le bloc */
+    text-align: center;   /* centre le texte */
+    display: block;       /* garantit que c’est un bloc centré */
+}
+
+
+/* Titres généraux */
+h1 {
+    color: white;
+    text-align: center;
+    margin: 30px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 2.5em;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    margin: 30px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 2em;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Formulaires */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+#formRecherche {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+}
+
+#formRecherche input[type="text"] {
+    flex: 1;
+}
+
+/* Champs de formulaire */
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Messages d'erreur */
+.error {
+    display: block;
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* Boutons */
+button,
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+button:active,
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Cartes d'animaux */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#listeAnimaux {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.animal-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.animal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+.animal-card h3 {
+    color: #667eea;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: left;
+    text-shadow: none;
+}
+
+.animal-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.animal-card strong {
+    color: #764ba2;
+}
+
+/* Liens */
+a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.animal-card a {
+    display: inline-block;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.animal-card a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    text-decoration: none;
+}
+
+/* Lien "Mettre un animal en adoption" - Bien visible */
+body > a[href="/adoption"] {
+    display: block;
+    background: white;
+    color: #667eea;
+    padding: 20px 40px;
+    border-radius: 15px;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 500px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 3px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+body > a[href="/adoption"]:hover {
+    background: #667eea;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+    text-decoration: none;
+}
+
+/* Lien "Retour à l'accueil" - Bien visible */
+body > p a[href="/"] {
+    display: inline-block;
+    background: white;
+    color: #667eea;
+    padding: 15px 35px;
+    border-radius: 12px;
+    font-size: 1.3em;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid #667eea;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+body > p a[href="/"]:hover {
+    background: #667eea;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    text-decoration: none;
+}
+
+/* Pages de détails - paragraphes centrés */
+body > p {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 30px 0;
+}
+
+/* Séparateur */
+hr {
+    border: none;
+    border-top: 3px solid rgba(255, 255, 255, 0.3);
+    margin: 40px auto;
+    max-width: 80%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .header-accueil {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .header-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .header-accueil h1 {
+        font-size: 2em;
+    }
+    
+    .sous-titre {
+        font-size: 1.1em;
+    }
+    
+    #listeAnimaux {
+        grid-template-columns: 1fr;
+    }
+    
+    #formRecherche {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    body > a[href="/adoption"] {
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
+    
+    body > p a[href="/"] {
+        font-size: 1.1em;
+        padding: 12px 28px;
+    }
+}
