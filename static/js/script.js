@@ -62,28 +62,36 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("errCourriel").textContent = "Adresse courriel invalide.";
             valid = false;
         }
+// Adresse civique : doit commencer par un numéro et avoir du texte ensuite
+const adresse = document.getElementById("adresse").value.trim();
+const adresseRegex = /^\d+\s+[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$/;
 
-        // Adresse
-        const adresse = document.getElementById("adresse").value.trim();
-        if (adresse === "") {
-            document.getElementById("errAdresse").textContent = "L'adresse est obligatoire.";
-            valid = false;
-        }
+if (!adresseRegex.test(adresse)) {
+    document.getElementById("errAdresse").textContent =
+        "Adresse invalide (ex : 123 Rue Sainte-Catherine).";
+    valid = false;
+}
 
-        // Ville
-        const ville = document.getElementById("ville").value.trim();
-        if (ville === "") {
-            document.getElementById("errVille").textContent = "La ville est obligatoire.";
-            valid = false;
-        }
+// Ville : lettres seulement
+const ville = document.getElementById("ville").value.trim();
+const villeRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$/;
 
-        // Code postal
-        const cp = document.getElementById("cp").value.trim();
-        const cpRegex = /^[A-Za-z]\d[A-Za-z][ ]?\d[A-Za-z]\d$/;
-        if (!cpRegex.test(cp)) {
-            document.getElementById("errCp").textContent = "Code postal canadien invalide (ex: H3Z 2Y7).";
-            valid = false;
-        }
+if (!villeRegex.test(ville)) {
+    document.getElementById("errVille").textContent =
+        "La ville doit contenir uniquement des lettres.";
+    valid = false;
+}
+
+// Code postal canadien
+const cp = document.getElementById("cp").value.trim();
+const cpRegex = /^[A-Za-z]\d[A-Za-z][ ]?\d[A-Za-z]\d$/;
+
+if (!cpRegex.test(cp)) {
+    document.getElementById("errCp").textContent =
+        "Code postal canadien invalide (ex: H3Z 2Y7).";
+    valid = false;
+}
+
 
         if (!valid) {
             e.preventDefault();

@@ -28,7 +28,7 @@ body {
 }
 
 .header-image {
-    width: 210x;
+    width: 300px;
     height: 190px;
     object-fit: contain;
     grid-row: 1 / 3;
@@ -276,18 +276,29 @@ body > a[href="/adoption"]:hover {
 }
 
 /* Lien "Retour à l'accueil" - Bien visible */
-body > p a[href="/"] {
+/* Bouton Retour à l'accueil – très visible */
+.retour-accueil {
     display: inline-block;
     background: white;
     color: #667eea;
     padding: 15px 35px;
     border-radius: 12px;
-    font-size: 1.3em;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    border: 3px solid #667eea;
-    transition: all 0.3s ease;
+    font-size: 1.4em;
     font-weight: bold;
+    border: 3px solid #667eea;
+    margin: 40px auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+    text-align: center;
 }
+
+.retour-accueil:hover {
+    background: #667eea;
+    color: white;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
 
 body > p a[href="/"]:hover {
     background: #667eea;
