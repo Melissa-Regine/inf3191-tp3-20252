@@ -84,7 +84,7 @@ if (!villeRegex.test(ville)) {
 
 // Code postal canadien
 const cp = document.getElementById("cp").value.trim();
-const cpRegex = /^[A-Za-z]\d[A-Za-z][ ]?\d[A-Za-z]\d$/;
+const cpRegex = /^[A-Z]\d[A-Z]\s?\d[A-Z]\d$/;
 
 if (!cpRegex.test(cp)) {
     document.getElementById("errCp").textContent =
